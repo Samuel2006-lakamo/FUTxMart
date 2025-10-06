@@ -11,15 +11,15 @@ function AboutUs() {
         campus shopping faster, safer, and more affordable.
       </p>
       <div className="flex gap-10 flex-col md:flex-row items-center justify-center">
-        <span className="flex gap-2 flex-col p-10">
+        <span className="flex gap-2 flex-col p-10 hover:translate-y-[-5px] transition-all duration-150">
           <h1 className="font-extrabold text-purple-700 text-5xl">1000+</h1>
           <p className="text-[18px] text-gray-500">Happy customers</p>
         </span>
-        <span className="flex gap-2 flex-col p-10">
+        <span className="flex gap-2 flex-col p-10 hover:translate-y-[-5px] transition-all duration-150">
           <h1 className="font-extrabold text-purple-700 text-5xl">500+</h1>
           <p className="text-[18px] text-gray-500">Products</p>
         </span>
-        <span className="flex gap-2 flex-col p-10">
+        <span className="flex gap-2 flex-col p-10 hover:translate-y-[-5px] transition-all duration-150">
           <h1 className="font-extrabold text-purple-700 text-5xl">24/7</h1>
           <p className="text-[18px] text-gray-500">Support</p>
         </span>
