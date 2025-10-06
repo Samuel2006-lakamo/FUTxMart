@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Intel:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind utilities;
+:root {
+  --font-raleway: "Raleway", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+/* small utility classes so you don't use inline styles */
+.font-raleway {
+  font-family: var(--font-raleway);
+}
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+.font-nunito {
+  font-family: "Nunito", sans-serif;
+}
