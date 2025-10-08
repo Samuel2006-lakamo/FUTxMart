@@ -4,72 +4,91 @@ import FormRow from "../ui/FormRow";
 import AuthFooter from "./AuthFooter";
 
 function LoginForm() {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   function onSubmit(e) {
     e.preventDefault();
-    console.log(email + password);
+    console.log(email, password);
 
     setEmail("");
     setPassword("");
   }
+
   return (
     <div
       className="relative z-10 flex flex-col items-center text-stone-600 bg-white/90 md:bg-white/95
-             py-6 px-6 md:py-10 md:px-12 
-             rounded-none md:rounded-2xl 
-             w-full h-screen md:h-auto 
-             md:w-[500px] lg:w-[600px] xl:w-[700px] shadow-lg"
+      py-8 px-6 md:py-12 md:px-12 
+      rounded-none md:rounded-2xl 
+      w-full h-screen md:h-auto 
+      md:w-[450px] lg:w-[520px] shadow-lg"
     >
-      <img src="/android-chrome-192x192.png" alt="Logo" className="mb-5" />
-      <form className="m-0 p-0">
-        <h1 className="md:text-4xl font-montserrat text-center text-2xl font-bold mb-7 font-[Poppins] text-purple-900">
-          Login to get started
+      {/* Logo Section */}
+      <div className="flex flex-col items-center mb-8">
+        <img
+          src="/logo1.png"
+          alt="FUTxMart logo"
+          className="h-20 w-auto mb-2 transition-transform hover:scale-105"
+        />
+        <h1
+          className="text-3xl font-semibold text-purple-900"
+          style={{ fontFamily: "'Outfit', sans-serif" }}
+        >
+          FUTM<span className="text-purple-700 font-bold">x</span>Mart
         </h1>
+      </div>
 
-        <FormRow label="Email address" id="email" error="">
-          <input
-            className="px-4 py-2 border-gray-400 rounded-md border md:border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            id="email"
-            autoComplete="username"
-            E
-          />
-        </FormRow>
+      {/* Form Section */}
+      <form className="w-full flex flex-col items-center" onSubmit={onSubmit}>
+        <h2 className="md:text-3xl text-center text-2xl font-bold mb-6 text-stone-900 font-[Poppins]">
+          Login to get started
+        </h2>
 
-        <FormRow label="Password" id="password" error="">
-          <input
-            className="px-4 py-2 border-gray-400 rounded-md border md:border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-        </FormRow>
+        <div className="w-full sm:max-w-[400px] space-y-4">
+          <FormRow label="Email address" id="email">
+            <input
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              id="email"
+              autoComplete="username"
+              required
+            />
+          </FormRow>
 
-        <div className="flex flex-col gap-3 mt-5 w-full sm:max-w-[400px]">
+          <FormRow label="Password" id="password">
+            <input
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              required
+            />
+          </FormRow>
+
           <button
             type="submit"
-            className="w-full cursor-pointer bg-purple-900 hover:bg-purple-800 text-white py-2 rounded-md font-semibold transition-all"
+            className="w-full bg-purple-900 hover:bg-purple-800 text-white py-2 rounded-md font-semibold transition-all mt-4"
           >
-            Create Account
+            Login
           </button>
         </div>
 
-        <div className="mt-5 flex items-center justify-center">
+        {/* Sign-up link */}
+        <div className="mt-5 text-center">
           <p>
             <span>Don't have an account? </span>
-            <Link to="/signup" className="text-blue-800 underline">
-              Sign-up for free
+            <Link to="/signup" className="text-blue-800 underline font-medium">
+              Sign up for free
             </Link>
           </p>
         </div>
 
-        <div className="w-[90%] mx-auto border-b border-stone-300 mt-10"></div>
+        {/* Divider */}
+        <div className="w-[90%] mx-auto border-b border-stone-300 mt-10 mb-4"></div>
 
         <AuthFooter />
       </form>

@@ -5,7 +5,7 @@ function AboutUs() {
         About Us
       </h2>
       <p className="text-gray-500 max-w-4xl lg:text-[18px] indent-8 mx-auto text-[16px]/8 font-[poppins] ">
-        FUTxMart is an online marketplace built exclusively for FUT Minna
+        FUTMxMart is an online marketplace built exclusively for FUT Minna
         students — connecting buyers and campus vendors in one easy-to-use
         platform. Our goal is to support student entrepreneurs while making
         campus shopping faster, safer, and more affordable.

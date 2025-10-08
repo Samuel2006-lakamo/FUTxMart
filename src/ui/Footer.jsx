@@ -34,10 +34,10 @@ function Footer() {
       {/* Main footer content */}
       <div className="bg-slate-800 px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8   text-center md:text-left">
         <div>
-          <h2 className="text-lg font-semibold mb-4">FUTxMart</h2>
+          <h2 className="text-lg font-semibold mb-4">FUTMxMart</h2>
           <p className="text-sm md:text-[16px] text-slate-300">
-            FUTxMart is an online marketplace for FUT Minna students, connecting
-            buyers and student vendors in one platform.
+            FUTMxMart is an online marketplace for FUT Minna students,
+            connecting buyers and student vendors in one platform.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ function Footer() {
               <span>
                 <MdEmail />
               </span>
-              <span> Email: futxmart@gmail.com</span>
+              <span> Email: futmxmart@gmail.com</span>
             </li>
             <li className="flex items-center gap-1 ">
               <span>
@@ -115,7 +115,7 @@ function Footer() {
       {/* Socials & Bottom */}
       <div className="bg-slate-900 text-center">
         <h1 className="font-extrabold text-2xl p-2 font-[Poppins]">
-          FUT<span className="text-purple-800">x</span>Mart
+          FUTM<span className="text-purple-800">x</span>Mart
         </h1>
         <div className="flex justify-center gap-6 py-4 text-xl">
           <Link to="/" className="hover:text-purple-400"></Link>
@@ -136,8 +136,9 @@ function Footer() {
         <div className="border-t border-slate-700 m-7 md:ml-20 md:mr-20"></div>
 
         <div className="text-sm py-4">
-          © {new Date().getFullYear()} FUT
-          <span className="text-purple-800">x</span>Mart. All rights reserved.
+          © {new Date().getFullYear()} FUTM
+          <span className="text-purple-800">x</span>
+          <span className="text-gray-100">Mart</span>. All rights reserved.
         </div>
       </div>
     </footer>

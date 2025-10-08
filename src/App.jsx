@@ -19,7 +19,7 @@ function App() {
         {/* Layout Routes */}
         <Route element={<AppLayout />}>
           {/* Redirect from "/" to homepage */}
-          <Route index element={<Navigate replace to="homepage" />} />
+          <Route index element={<Homepage />} />
 
           <Route path="homepage" element={<Homepage />} />
 

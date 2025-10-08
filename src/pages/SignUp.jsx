@@ -25,7 +25,9 @@ function SignUp() {
         />
         <div className="absolute inset-0 bg-purple-800/40"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">Join FUTxMart</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">
+            Join FUTMxMart
+          </h1>
           <p className="text-sm md:text-base text-gray-200">
             Create your account and start exploring student vendors and deals.
           </p>

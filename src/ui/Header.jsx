@@ -1,43 +1,47 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+import Sidebar from "./Sidebar";
+import HeaderLeft from "./HeaderLeft";
+import Search from "./Search";
+import HeaderMenus from "./HeaderMenus";
 
 function Header() {
-  const navigate = useNavigate();
-  return (
-    <header
-      className="flex shadow-sm w-[100vw] z-1000 pr-3 pl-2 md:pr-7 md:pl-7 top-0 right-0 left-0 items-center justify-between h-15 fixed bg-white"
-      style={{ fontFamily: "var(--font-heading)" }}
-    >
-      <div>
-        <Link to="/">
-          {" "}
-          <img
-            src="  /logo.png-removebg-preview.png"
-            className="w-35 sm:40 md:45"
-            alt=""
-          />
-        </Link>
-      </div>
-      {/* <input
-          type="searchs"
-          placeholder="search"
-          class="border-gray-700 border-1 p-3  md:grow-0"
-        /> */}
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
-      <div className="flex justify-between md:gap-6 gap-2">
-        <button
-          onClick={() => navigate("/login")}
-          className="hover:bg-purple-100 rounded-full text-1 border-0 font-medium text-stone-800 bg-none pl-3.5 pr-3.5 pt-2 pb-2  "
-        >
-          Log in
-        </button>
-        <button
-          onClick={() => navigate("/signup")}
-          className="border-gray-300 font-medium text-1 border-0 hover:bg-purple-200 bg-purple-50  text-stone-800 pl-3 pr-3 rounded-full :hover"
-        >
-          Sign up
-        </button>
-      </div>
-    </header>
+  return (
+    <>
+      {/* Header */}
+      <header
+        className="flex shadow-sm w-full fixed top-0 left-0 right-0 z-50 bg-white items-center justify-between px-3 md:px-7 h-16"
+        style={{ fontFamily: "var(--font-heading)" }}
+      >
+        <HeaderLeft setSidebarOpen={setSidebarOpen} />
+
+        <div className="relative hidden sm:block w-48 md:w-72">
+          <Search />
+        </div>
+
+        <HeaderMenus setShowSearch={setShowSearch} showSearch={showSearch} />
+      </header>
+
+      {showSearch && (
+        <div className="md:hidden pt-3 fixed top-16 left-0 right-0 bg-white z-40 px-3 pb-2 shadow-md animate-slideDown">
+          <div className="relative">
+            <Search />
+          </div>
+        </div>
+      )}
+      {sidebarOpen && (
+        <>
+          <div
+            onClick={() => setSidebarOpen(false)}
+            className="fixed inset-0 bg-black opacity-50 z-40"
+          ></div>
+          <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        </>
+      )}
+    </>
   );
 }
 

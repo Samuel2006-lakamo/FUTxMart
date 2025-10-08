@@ -77,7 +77,7 @@ function HeroBackground() {
       {/* Centered Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-20 px-4">
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-          Welcome to FUTxMart
+          Welcome to FUTMxMart
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl mb-6 text-yellow-50 drop-shadow-md font-serif">
           Campus marketplace, by students for students.
