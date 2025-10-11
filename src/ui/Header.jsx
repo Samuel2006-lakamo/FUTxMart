@@ -11,6 +11,7 @@ function Header() {
 
   return (
     <>
+
       {/* Header */}
       <header
         className="flex shadow-sm w-full fixed top-0 left-0 right-0 z-50 bg-white items-center justify-between px-3 md:px-7 h-16"
