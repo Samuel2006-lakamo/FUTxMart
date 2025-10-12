@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Homepage from "./pages/Homepage";
 import SignUp from "./pages/SignUp";
@@ -9,32 +9,35 @@ import Cart from "./pages/Cart";
 import Shop from "./pages/Shop";
 import ProductDetails from "./pages/ProductDetails";
 import PageNotFound from "./pages/PageNotFound";
-
 import AppLayout from "./ui/AppLayout";
+import Setting from "./pages/Setting";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Layout Routes */}
+        {/* ✅ Layout Routes */}
         <Route element={<AppLayout />}>
-          {/* Redirect from "/" to homepage */}
+          {/* Home */}
           <Route index element={<Homepage />} />
-
           <Route path="homepage" element={<Homepage />} />
 
+          {/* Buyer Routes */}
           <Route path="cart" element={<Cart />} />
           <Route path="products" element={<Shop />} />
           <Route path="products/:productId" element={<ProductDetails />} />
+
+          {/* Vendor Routes */}
           <Route path="vendor" element={<Vendors />} />
-          <Route path="dashboard" element={<VendorDashboard />} />
+          <Route path="vendor/dashboard" element={<VendorDashboard />} />
+          <Route path="vendor/settings" element={<Setting />} />
         </Route>
 
-        {/* Auth Outside Layout */}
+        {/* Auth Pages (outside layout) */}
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
 
-        {/* Catch-all */}
+        {/* Catch-All */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

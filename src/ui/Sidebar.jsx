@@ -1,7 +1,7 @@
 import { FaArrowRight } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard,
   Package,
@@ -16,6 +16,8 @@ import { Home, ShoppingCart, Users } from "lucide-react";
 import Logout from "./Logout";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
+  const navigate = useNavigate()
+  
   const auth = false;
   const vendor = false;
   const buyer = true;
@@ -164,7 +166,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
         {!auth && (
           <>
             <span className="text-gray-700 font-bold">Login</span>
-            <button className="bg-purple-50 hover:bg-purple-200 text-stone-800 px-3 py-2 rounded-full flex items-center">
+            <button onClick={() => navigate("/login")} className="bg-purple-50 hover:bg-purple-200 text-stone-800 px-3 py-2 rounded-full flex items-center">
               <LogIn className="text-lg" />
             </button>{" "}
           </>
