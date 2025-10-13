@@ -36,3 +36,15 @@
 .animate-slideDown {
   animation: slideDown 0.25s ease-in-out;
 }
+
+
+@theme {
+  --color-brand: #6B21A8;
+    --color-brand-white: #fcfcfc;
+  --color-brand-accent: #F3E8FF;
+  
+  /* You can also use different shades */
+  --color-brand-50: #eff6ff;
+  --color-brand-text: #1E1E1E;
+  /* etc */
+}

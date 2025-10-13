@@ -18,9 +18,9 @@ import Logout from "./Logout";
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const navigate = useNavigate()
   
-  const auth = false;
-  const vendor = false;
-  const buyer = true;
+  const auth = true;
+  const vendor = true;
+  const buyer = false;
 
   const vendorLinks = [
     {

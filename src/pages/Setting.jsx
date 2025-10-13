@@ -1,9 +1,10 @@
-import VendorSettings from "../Featured/settings/VendorSettings";
+import SettingLayout from "../Featured/settings/SettingLayout";
+
 
 
 function Setting() {
   return (
-  <VendorSettings/>
+  <SettingLayout/>
   );
 }
 

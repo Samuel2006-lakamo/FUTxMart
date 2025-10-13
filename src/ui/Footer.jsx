@@ -1,6 +1,7 @@
 import {
   FaFacebookF,
   FaInstagram,
+  FaTelegram,
   FaWhatsapp,
   FaXTwitter,
 } from "react-icons/fa6";
@@ -106,7 +107,7 @@ function Footer() {
               className="px-3 py-2 outline-0 rounded-l-md text-black w-full bg-slate-50"
             />
             <button className="px-4 py-2 cursor-pointer bg-purple-800 rounded-r-md hover:bg-purple-700">
-              Subscribe
+            Subscribe
             </button>
           </div>
         </div>

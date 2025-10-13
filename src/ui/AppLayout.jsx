@@ -6,7 +6,7 @@ function AppLayout() {
   return (
     <>
       <Header />
-      <main style={{ fontFamily: "var(--font-poppins)" }}>
+      <main className="bg-slate-100" style={{ fontFamily: "var(--font-poppins)" }}>
         <Outlet />
       </main>
       <Footer style={{ fontFamily: "var(--font-poppins)" }} />
