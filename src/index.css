@@ -43,8 +43,9 @@
     --color-brand-white: #fcfcfc;
   --color-brand-accent: #F3E8FF;
   
-  /* You can also use different shades */
-  --color-brand-50: #eff6ff;
   --color-brand-text: #1E1E1E;
-  /* etc */
+        --color-secondary: #F3E8FF;
+        --color-deep-accent: #9C27B0;
+   
+      
 }

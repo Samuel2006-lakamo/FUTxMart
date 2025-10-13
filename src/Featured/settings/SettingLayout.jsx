@@ -58,10 +58,10 @@ export default function Setting() {
         </aside>
 
         {/* Content Area */}
-        <main className="flex-1 p-6 bg-slate-100  md:mt-15">
+        <main className="flex-1 md:p-6 bg-slate-100  md:mt-15">
           {/* Mobile view: show list or tab content */}
           {!mobileView ? (
-            <div className="md:hidden bg-brand-white font">
+            <div className="md:hidden bg-brand-white font mt-15">
               <h2 className="text-xl bg-brand-white font-semibold mb-4">
                 Settings
               </h2>
