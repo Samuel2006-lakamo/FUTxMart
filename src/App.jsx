@@ -12,6 +12,7 @@ import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./ui/AppLayout";
 import SettingLayout from "./Featured/settings/SettingLayout";
 import ProfileSettings from "./Featured/settings/Profile";
+import Product from "./Featured/Vendor/Product";
 // import StoreSettings from "./Featured/settings/StoreSettings";
 // import PaymentSettings from "./Featured/settings/PaymentSettings";
 // import NotificationSettings from "./Featured/settings/NotificationSettings";
@@ -35,6 +36,7 @@ function App() {
           {/* Vendor Routes */}
           <Route path="vendor" element={<Vendors />} />
           <Route path="vendor/dashboard" element={<VendorDashboard />} />
+            <Route path="vendor/products" element={<Product/>} />
           <Route path="vendor/settings" element={<SettingLayout />}>
             <Route index element={<ProfileSettings />} />
             <Route path="profile" element={<ProfileSettings />} />

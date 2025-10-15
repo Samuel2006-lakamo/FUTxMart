@@ -1,4 +1,4 @@
-function FloatingSelect({value,onChange}) {
+function FloatingSelect({value,onChange,options,label}) {
   return (
     <div className="relative w-full">
       <select
@@ -7,9 +7,9 @@ function FloatingSelect({value,onChange}) {
         onChange={onChange}
         className="peer block w-full appearance-none rounded-md border border-gray-300 bg-transparent px-3 pt-5 pb-1.5 text-sm text-gray-900 focus:border-brand focus:ring-0 focus:outline-none transition-all"
       >
-        <option value="" disabled hidden></option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
+       {options.map((option) => <option value={option.value}>
+        {option.label}
+       </option>)}
       </select>
 
       <label
@@ -22,7 +22,7 @@ function FloatingSelect({value,onChange}) {
       }
       peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:scale-90 peer-focus:text-brand`}
       >
-        Gender
+     {label}
       </label>
 
       {/* Optional dropdown arrow */}

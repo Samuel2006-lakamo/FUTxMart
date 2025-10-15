@@ -3,14 +3,15 @@ import Profile from "./Profile";
 import Security from "./Security";
 
 import Notifications from "./Notification";
-import { HiArrowLeft } from "react-icons/hi2";
+import { HiArrowLeft, HiTrash } from "react-icons/hi2";
+import ShopDetails from "./ShopDetails";
 
 const tabs = [
   { name: "Profile", component: <Profile /> },
   { name: "Security", component: <Security /> },
 
   { name: "Notifications", component: <Notifications /> },
-  { name: "Notifications", component: <Notifications /> },
+  { name: "ShopDetails", component: <ShopDetails /> },
 ];
 
 export default function Setting() {
@@ -20,10 +21,10 @@ export default function Setting() {
   const currentTab = tabs.find((tab) => tab.name === activeTab);
 
   return (
-    <div className="min-h-screen bg-brand-accent font-sans">
+    <div className="min-h-screen overflow-hidden bg-brand-accent font-sans">
       {/* Header (Mobile) */}
       {mobileView && (
-        <div className="flex items-center gap-3 p-4 bg-brand mt-20 text-white">
+        <div className="flex items-center gap-3 p-4 bg-brand mt-15 text-white">
           <button
             onClick={() => setMobileView(false)}
             className="text-lg font-medium hover:border-2 border-white rounded-full p-2"
@@ -36,7 +37,7 @@ export default function Setting() {
 
       <div className="flex flex-col md:flex-row">
         {/* Sidebar (Desktop Only) */}
-        <aside className="hidden md:flex md:flex-col w-64 bg-white border-r shadow-sm  border-stone-200 mt-15">
+        <aside className="hidden md:flex md:flex-col w-64 bg-white border-r shadow-sm  relative border-stone-200 mt-15 h-auto">
           <h1 className="text-2xl font-semibold text-brand px-6 py-4">
             Settings
           </h1>
@@ -55,13 +56,16 @@ export default function Setting() {
               </button>
             ))}
           </nav>
+          <div className="absolute w-full bottom-0 p-4 bg-purple-200 flex items-center gap-3">
+            <button className="text-red-700 ">Delete account</button><span><HiTrash/></span>
+          </div>
         </aside>
 
         {/* Content Area */}
-        <main className="flex-1 md:p-6 bg-slate-100  md:mt-15">
+        <main className="flex-1 md:p-6 bg-slate-100  ">
           {/* Mobile view: show list or tab content */}
           {!mobileView ? (
-            <div className="md:hidden bg-brand-white font mt-15">
+            <div className="md:hidden bg-brand-white font mt-15 py-6 px-4">
               <h2 className="text-xl bg-brand-white font-semibold mb-4">
                 Settings
               </h2>

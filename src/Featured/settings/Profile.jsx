@@ -4,37 +4,42 @@ import FloatingSelect from "../../ui/FloatingSelect";
 import Button from "../../ui/Button";
 
 export default function Profile() {
-  const [firstName,setFirstName] = useState()
-  const [lastName, setLastName] = useState();
-  const [gender, setGender] = useState();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [gender, setGender] = useState("");
   const [file, setFile] = useState(null);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
-  return (
-    <div className="h-full bg-slate-50 p-6 w-full">
-      <h2 className="text-2xl font-semibold text-brand mb-4 pt-4">
-        Profile Settings
-      </h2>
-      <div className=" flex flex-col items-center ">
-        <img
-          src="/images/default-user.jpg"
-          className="w-50 rounded-full object-center object-cover "
-          alt=""
-        />
-        <span>Lakamo Samuel</span>
-        <div className="w-full ">
-          <h2 className="text-brand font-semibold mb-4">
-            Edit Profile
-          </h2>
 
-          <div className="mb-4">
+  const handleSave = (e) => {
+    e.preventDefault();
+    console.log({ firstName, lastName, gender, file });
+    alert("Profile updated successfully!");
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 flex justify-center py-10 px-4">
+      <div className="w-full bg-white shadow-md rounded-lg p-6">
+        {/* Header */}
+        <h2 className="text-2xl font-semibold text-brand mb-6">
+          Profile Settings
+        </h2>
+
+        {/* Profile Picture */}
+        <div className="flex flex-col items-center mb-6">
+          <div className="relative group">
+            <img
+              src={file ? URL.createObjectURL(file) : "/images/profile.jpg"}
+              alt="Profile"
+              className="w-32 h-32 rounded-full object-cover border-4 border-brand shadow-sm"
+            />
             <label
               htmlFor="profile-picture"
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="absolute inset-0 flex items-center justify-center bg-black/50 text-white text-sm opacity-0 group-hover:opacity-100 rounded-full cursor-pointer transition"
             >
-              Upload Profile Picture
+              Change
             </label>
             <input
               type="file"
@@ -42,54 +47,63 @@ export default function Profile() {
               name="profile-picture"
               accept="image/*"
               onChange={handleFileChange}
-              className="block w-full text-sm text-gray-500 file:py-2 file:px-4 file:rounded file:border-0 file:text-white file:bg-brand file:hover:bg-brand"
+              className="hidden"
             />
-            {file && (
-              <div className="mt-2 text-sm text-gray-500">
-                <span>Selected file: </span>
-                <span className="font-semibold">{file.name}</span>
-              </div>
-            )}
-            <p className="text-xs text-gray-400 mt-2">
-              Choose a file to upload your profile picture (JPG, PNG, or GIF
-              only).
-            </p>
           </div>
 
-          
+          <span className="mt-3 font-medium text-gray-700">Lakamo Samuel</span>
+          {file && (
+            <p className="text-xs text-gray-500 mt-1">
+              Selected file: <span className="font-semibold">{file.name}</span>
+            </p>
+          )}
         </div>
-      </div>
-      <div className="bg-brand-accent p-4 rounded-lg">
-        <p className="text-gray-700">
-          Update your name, email, and profile picture here.
-        </p>
-      </div>
-      <form className="py-6 flex flex-col gap-6">
-        <FloatingLabelInput
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          label="First Name*"
-          id="firstName"
-        />
-        <FloatingLabelInput
-          value={lastName}
-          label="Last Name*"
-          onChange={(e) => setLastName(e.target.value)}
-          id="lastName"
-        />
-        <FloatingSelect
-          value={gender}
-          onChange={(e) => setGender(e.target.value)}
-        />
 
-        <textarea
-          className="outline-none  p-4 text-gray-500 text-sm duration-200 transform scale-100 origin-left border border-gray-300 px-2 rounded-sm"
-          name=""
-          id=""
-          placeholder="Bio (a brief description can help)"
-        ></textarea>
-        <Button value="save" />
-      </form>
+        {/* Info Section */}
+        <div className="bg-brand-accent p-4 rounded-lg mb-6">
+          <p className="text-gray-700 text-sm">
+            Update your name, gender, and profile picture here.
+          </p>
+        </div>
+
+        {/* Form */}
+        <form onSubmit={handleSave} className="flex flex-col gap-6">
+          <FloatingLabelInput
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            label="First Name*"
+            id="firstName"
+            required
+          />
+
+          <FloatingLabelInput
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            label="Last Name*"
+            id="lastName"
+            required
+          />
+
+          <FloatingSelect
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+            label="Gender"
+            options={[
+              { label: "", value: "" },
+              { label: "Male", value: "male" },
+              { label: "Female", value: "female" },
+            ]}
+          />
+
+          <textarea
+            className="outline-none p-4 text-gray-600 text-sm border border-gray-300 rounded-md focus:border-brand transition"
+            placeholder="Bio (a brief description can help)"
+            rows="3"
+          ></textarea>
+
+          <Button value="Save Changes" />
+        </form>
+      </div>
     </div>
   );
 }
