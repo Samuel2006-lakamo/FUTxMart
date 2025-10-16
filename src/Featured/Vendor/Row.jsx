@@ -35,13 +35,13 @@ function Row({ product, index ,rowColors,handleEdit,handleDelete,}) {
           <div className="flex justify-end gap-2 pr-6">
             <button
               onClick={() => handleEdit(product.id)}
-              className="px-3 py-1 text-xs bg-purple-600 text-white rounded-md hover:bg-purple-700 transition"
+              className="px-3 py-1 text-xs cursor-pointer bg-purple-800 text-white rounded-md hover:bg-purple-700 transition"
             >
               Edit
             </button>
             <button
               onClick={() => handleDelete(product.id)}
-              className="px-3 py-1 text-xs bg-red-600 text-white rounded-md hover:bg-red-700 transition"
+              className="px-3 py-1 text-xs cursor-pointer bg-red-700 text-white rounded-md hover:bg-red-600 transition"
             >
               Delete
             </button>

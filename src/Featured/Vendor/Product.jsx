@@ -2,6 +2,8 @@
 import { HiPlus, HiUserAdd } from "react-icons/hi";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
+import AddProduct from "./AddProduct";
+
 
 function VendorProducts() {
 
@@ -11,12 +13,7 @@ function VendorProducts() {
         <h2 className="text-xl font-semibold  text-gray-700">
           Vendor Products
         </h2>
-        <button className="flex items-center bg-purple-800 text-white py-1 px-2 rounded-2xl gap-1 cursor-pointer hover:bg-purple-700 ">
-          <span>
-            <HiPlus />
-          </span>
-          <span>Add</span>{" "}
-        </button>
+      <AddProduct/>
       </div>
 
       <TableHeader />

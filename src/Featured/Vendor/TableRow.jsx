@@ -14,7 +14,7 @@ const handleDelete = (id) => {
   const handleEdit = (id) => {
     alert("Edit product with ID:" `${id}`);
   };
-    const rowColors = ["bg-gray-200", "bg-green-100", ];
+    const rowColors = ["bg-gray-50", "bg-green-50", ];
   return (
     <>
       {products.map((product, index) => (<Row  rowColors={rowColors}  key={product.id} index={index}

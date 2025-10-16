@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { HiPause, HiPlay } from "react-icons/hi2";
-
+import {
+  ShoppingBag,
+  Store,
+  Users,
+  Shield,
+  Zap,
+  Heart,
+  GraduationCap,
+  TrendingUp,
+  CheckCircle,
+} from "lucide-react";
 const images = [
   "/images/hero1.jpg",
   "/images/hero2.jpg",
@@ -76,22 +86,37 @@ function HeroBackground() {
 
       {/* Centered Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-20 px-4">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-          Welcome to FUTMxMart
-        </h1>
-        <p className="text-lg sm:text-xl md:text-2xl mb-6 text-yellow-50 drop-shadow-md font-serif">
-          Campus marketplace, by students for students.
-        </p>
-        <p
-          style={{ fontFamily: "var(--font-body)" }}
-          className="text-lg sm:text-xl md:text-2xl mb-6 drop-shadow-md "
-        >
-          “Find everything you need on campus, sold by students for
-          students—fast, easy, and right at your fingertips!”
-        </p>
-        <button className="bg-purple-800 hover:bg-purple-700 px-8 py-3 rounded-lg transition-all hover:scale-105 font-semibold shadow-lg">
-          Shop Now
-        </button>
+        <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-primary/5 py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <div className="text-center space-y-6">
+              <div className="inline-flex items-center inset-0backdrop-blur-lg bg-black/5 border-2 border-purple-700
+               gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm font-medium text-primary ">
+                <GraduationCap className="w-4 h-4" />
+                Welcome to FUTMxMart
+              </div>
+             
+              <h1 className="text-4xl md:text-6xl font-bold text-foreground">
+                Buy & Sell Within Your
+                <span className="text-primary text-purple-600"> Campus Community</span>
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+                Connect students, enable commerce. The marketplace built for
+                students, by students.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                <button size="lg" className="text-lg bg-purple-800 py-3 rounded-sm px-4 w-auto flex items-center overflow-hidden">
+                  Start Buying
+                  <ShoppingBag className="ml-2 w-5 h-5" />
+                </button>
+                <button size="lg" variant="outline" className=" text-lg border-2 border-purple-800 hover:bg- py-3 rounded-sm px-4 w-auto flex items-center overflow-hidden">
+                  Become a Vendor
+                  <Store className="ml-2 w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        ;
       </div>
 
       {/* Side Navigation Buttons */}
@@ -162,5 +187,6 @@ function HeroBackground() {
     </div>
   );
 }
+  
 
 export default HeroBackground;

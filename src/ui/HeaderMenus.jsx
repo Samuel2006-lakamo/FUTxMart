@@ -5,6 +5,8 @@ import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import Logout from "./Logout";
 import AccountDropDown from "./AccountDropDown";
+import Modal from "./Modal";
+import AddProductForm from "../Featured/Vendor/AddProductForm";
 
 function HeaderMenus({ setShowSearch, showSearch }) {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -41,14 +43,21 @@ function HeaderMenus({ setShowSearch, showSearch }) {
 
       {vendor && (
         <div className="flex items-center gap-2 md:gap-5 relative">
-          <button
-            onClick={() => navigate("/vendor/add-product")}
-            className="relative flex items-center hover:text-purple-900 gap-2 hover:bg-purple-100 cursor-pointer rounded-full px-2 py-2 text-stone-500 font-medium transition"
-          >
-            <IoMdAdd className="text-2xl" />
-            <span className="text-md font-medium hidden sm:block">Add</span>
-          </button>
-
+         
+          <Modal>
+            <Modal.Open opens="addProduct">
+              <button
+                onClick={() => navigate("/vendor/add-product")}
+                className="relative flex items-center hover:text-purple-900 gap-2 hover:bg-purple-100 cursor-pointer rounded-full px-2 py-2 text-stone-500 font-medium transition"
+              >
+                <IoMdAdd className="text-2xl" />
+                <span className="text-md font-medium hidden sm:block">Add</span>
+              </button>
+            </Modal.Open>
+            <Modal.Window name="addProduct">
+              <AddProductForm />
+            </Modal.Window>
+          </Modal>
           {/* Orders */}
           <button
             onClick={() => navigate("/vendor/orders")}

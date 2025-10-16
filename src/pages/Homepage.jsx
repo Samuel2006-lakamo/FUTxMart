@@ -6,9 +6,10 @@ import HeroBackground from "./../ui/Hero";
 function Homepage() {
   return (
     <>
-      <div className="h-[100dvh]  mt-20">
+      
         <HeroBackground />
-      </div>
+     
+   
       <WhyChooseUs />
       <AboutUs />
       <NewUser />

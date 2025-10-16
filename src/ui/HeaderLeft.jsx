@@ -15,18 +15,18 @@ function HeaderLeft({ setSidebarOpen }) {
       {/* Logo + Brand Name */}
       <Link to="/" className="flex items-center gap-1 md:gap-2 group">
         <img
-          src="/logo1.png"
+          src="/logo.jpg"
           alt="FUTxMart logo"
           className=" h-10 md:h-14  py-1 px-1 border-2 border-transparent hover:border-purple-800 rounded-lg transition-all duration-200 group-hover:scale-105"
         />
 
-        <span
+        {/* <span
           className="md:text-3xl text-1xl font-semibold tracking-tight text-gray-900"
           style={{ fontFamily: "'Outfit', sans-serif" }}
         >
           FUTM<span className="text-purple-700 font-bold">x</span>
           <span className="text-gray-800 font-medium">Mart</span>
-        </span>
+        </span> */}
       </Link>
     </div>
   );
