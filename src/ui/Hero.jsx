@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { HiPause, HiPlay } from "react-icons/hi2";
-import {
-  ShoppingBag,
-  Store,
-  Users,
-  Shield,
-  Zap,
-  Heart,
-  GraduationCap,
-  TrendingUp,
-  CheckCircle,
-} from "lucide-react";
+import { ShoppingBag, Store, GraduationCap } from "lucide-react";
+import Button from "../ui/Button"; // ✅ make sure this points to your reusable button file
+
 const images = [
   "/images/hero1.jpg",
   "/images/hero2.jpg",
@@ -23,8 +15,6 @@ const images = [
 function HeroBackground() {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-
-  // Preload images
   useEffect(() => {
     images.forEach((src) => {
       const img = new Image();
@@ -32,7 +22,6 @@ function HeroBackground() {
     });
   }, []);
 
-  // Auto-change every 5 seconds (pause on hover)
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
@@ -41,17 +30,6 @@ function HeroBackground() {
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "ArrowLeft") prevSlide();
-      if (e.key === "ArrowRight") nextSlide();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
-  // Manual navigation
   const prevSlide = () =>
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
   const nextSlide = () => setCurrent((prev) => (prev + 1) % images.length);
@@ -73,53 +51,54 @@ function HeroBackground() {
           className={`absolute top-0 left-0 w-full h-full bg-cover bg-center z-0 transition-opacity duration-1000 ease-in-out ${
             current === index ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
-          style={{ backgroundImage: `url(${img})` }}
-          role="group"
-          aria-roledescription="slide"
-          aria-label={`Slide ${index + 1} of ${images.length}`}
-          aria-hidden={current !== index}
-        ></div>
+          style={{ backgroundImage: `url(${img}) `}}
+        />
       ))}
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-blend-overlay opacity-40 bg-purple-900 z-10"></div>
+      {/* Dark Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-900 via-slate-900 to-gray-900 opacity-90 z-10"></div>
 
-      {/* Centered Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-20 px-4">
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-primary/5 py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center space-y-6">
-              <div className="inline-flex items-center inset-0backdrop-blur-lg bg-black/5 border-2 border-purple-700
-               gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm font-medium text-primary ">
-                <GraduationCap className="w-4 h-4" />
-                Welcome to FUTMxMart
-              </div>
-             
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-                Buy & Sell Within Your
-                <span className="text-primary text-purple-600"> Campus Community</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Connect students, enable commerce. The marketplace built for
-                students, by students.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-                <button size="lg" className="text-lg bg-purple-800 py-3 rounded-sm px-4 w-auto flex items-center overflow-hidden">
-                  Start Buying
-                  <ShoppingBag className="ml-2 w-5 h-5" />
-                </button>
-                <button size="lg" variant="outline" className=" text-lg border-2 border-purple-800 hover:bg- py-3 rounded-sm px-4 w-auto flex items-center overflow-hidden">
-                  Become a Vendor
-                  <Store className="ml-2 w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-        ;
+      {/* Center Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-20 px-6">
+        <div className="inline-flex items-center gap-2 backdrop-blur-2xl bg-white/10 border border-amber-400 px-4 py-2 rounded-full text-sm font-medium text-white shadow-md">
+          <GraduationCap className="w-4 h-4" />
+          Welcome to FUTMxMart
+        </div>
+
+        <h1 className="text-4xl md:text-6xl font-extrabold mt-6 leading-tight">
+          Buy & Sell Within Your{" "}
+          <span className="bg-gradient-to-r from-amber-400 via-yellow-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(251,191,36,0.3)]">
+            Campus Community
+          </span>
+        </h1>
+
+        <p className="text-lg md:text-xl text-gray-200 mt-4 max-w-2xl mx-auto leading-relaxed">
+          Connect students, enable commerce — the marketplace built for students, by students.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+          <Button
+            variant="solid"
+            size="lg"
+            className="bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-lg hover:scale-105 transition-transform flex items-center gap-2"
+          >
+            Start Buying
+            <ShoppingBag className="w-5 h-5" />
+          </Button>
+
+          <Button
+
+            variant="outline"
+            size="lg"
+            className="border-teal-400 text-teal-300 hover:bg-teal-500/10 flex items-center gap-2"
+          >
+            Become a Vendor
+            <Store className="w-5 h-5" />
+          </Button>
+        </div>
       </div>
 
-      {/* Side Navigation Buttons */}
+      {/* Prev / Next Buttons */}
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 hidden md:block -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-3 rounded-full transition-all hover:scale-110 z-20"
@@ -131,19 +110,12 @@ function HeroBackground() {
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
-
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2    hidden
-        md:block -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-3 rounded-full transition-all hover:scale-110 z-20"
+        className="absolute right-4 top-1/2 hidden md:block -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-3 rounded-full transition-all hover:scale-110 z-20"
         aria-label="Next slide"
       >
         <svg
@@ -152,16 +124,11 @@ function HeroBackground() {
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
 
-      {/* Indicator Dots */}
+      {/* Dots */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
         {images.map((_, index) => (
           <button
@@ -169,11 +136,9 @@ function HeroBackground() {
             onClick={() => goToSlide(index)}
             className={`h-3 rounded-full transition-all ${
               current === index
-                ? "bg-white w-8"
-                : "bg-white/50 w-3 hover:bg-white/70"
+                ? "bg-amber-400 w-8"
+                : "bg-white w-3 hover:bg-white/70"
             }`}
-            aria-label={`Go to slide ${index + 1}`}
-            aria-current={current === index ? "true" : "false"}
           />
         ))}
       </div>
@@ -187,6 +152,5 @@ function HeroBackground() {
     </div>
   );
 }
-  
 
 export default HeroBackground;
