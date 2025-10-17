@@ -101,7 +101,7 @@ export default function Profile() {
             rows="3"
           ></textarea>
 
-          <Button value="Save Changes" />
+          <Button>Save Changes</Button>
         </form>
       </div>
     </div>

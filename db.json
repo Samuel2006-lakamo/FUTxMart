@@ -1,0 +1,111 @@
+{"products":[
+  {
+    "id": 1,
+    "name": "Wireless Bluetooth Headphones",
+    "price": 18999,
+    "category": "Electronics",
+    "description": "High-quality wireless headphones with noise cancellation and long battery life.",
+    "image": "/productsImg/headphones.jpg",
+    "isFeatured": true
+  },
+  {
+    "id": 2,
+    "name": "Smart Fitness Watch",
+    "price": 25999,
+    "category": "Wearables",
+    "description": "Track your steps, heart rate, and sleep patterns with this stylish smart fitness watch.",
+    "image": "/productsImg/fitness-watch.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": 3,
+    "name": "USB-C Fast Charger",
+    "price": 5999,
+    "category": "Accessories",
+    "description": "Compact and efficient fast charger compatible with most USB-C devices.",
+    "image": "/productsImg/usb-charger.jpg",
+    "isFeatured": true
+  },
+  {
+    "id": 4,
+    "name": "Classis Handbag",
+    "price": 12999,
+    "category": "Fashion",
+    "description": "Slim, handcrafted classic designed for style and durability.",
+    "image": "/productsImg/handbag.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": 5,
+    "name": "Portable Bluetooth Speaker",
+    "price": 17999,
+    "category": "Electronics",
+    "description": "Powerful sound in a compact design. Perfect for indoor and outdoor use.",
+    "image": "/productsImg/speaker.jpg",
+    "isFeatured": true
+  },
+  {
+    "id": 6,
+    "name": "Gaming Mouse Pad",
+    "price": 4999,
+    "category": "Accessories",
+    "description": "Smooth surface and anti-slip base for a professional gaming experience.",
+    "image": "/productsImg/mousepad.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": 7,
+    "name": "Laptop Cooling Stand",
+    "price": 8999,
+    "category": "Electronics",
+    "description": "Ergonomic stand with dual fans to keep your laptop cool and comfortable.",
+    "image": "/productsImg/laptop-stand.jpg",
+    
+    "isFeatured": false
+  },
+  {
+    "id": 8,
+    "name": "Classic Round Sunglasses",
+    "price": 7999,
+    "category": "Fashion",
+    "description": "Trendy sunglasses offering UV protection and a modern vintage look.",
+    "image": "/productsImg/sunglasses.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": 9,
+    "name": "Wireless Keyboard & Mouse Combo",
+    "price": 15499,
+    "category": "Electronics",
+    "description": "Comfortable typing and precise control with this sleek wireless combo.",
+    "image": "/productsImg/keyboard-mouse.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": 10,
+    "name": "Custom FUTMxMart Hoodie",
+    "price": 22499,
+    "category": "Clothing",
+    "description": "Soft cotton hoodie branded with the official FUTMxMart logo and design.",
+    "image": "/productImg/hoodie.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": 11,
+    "name": "Rolex Submariner watch",
+    "price": 8999,
+    "category": "Electronics",
+    "description": "Luxury timepiece crafted with stainless steel and sapphire.",
+    "image": "/productsImg/rolex.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": 12,
+    "name": "Nike Air Force 1",
+    "price": 13999,
+    "category": "Clothing",
+    "description": "Comfortable sneakers with a comfortable sole and stylist look.",
+    "image": "/productsImg/sneakers.jpg",
+    "isFeatured": false
+  }
+]}

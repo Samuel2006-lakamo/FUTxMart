@@ -80,7 +80,7 @@ function HeroBackground() {
           <Button
             variant="solid"
             size="lg"
-            className="bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-lg hover:scale-105 transition-transform flex items-center gap-2"
+            className="bg-amber-500 hover:bg-amber-400 text-black font-semibold shadow-lg hover:scale-105 transition-transform flex items-center gap-2"
           >
             Start Buying
             <ShoppingBag className="w-5 h-5" />
@@ -90,7 +90,7 @@ function HeroBackground() {
 
             variant="outline"
             size="lg"
-            className="border-teal-400 text-teal-300 hover:bg-teal-500/10 flex items-center gap-2"
+            className="border-teal-400 text-teal-300 hover:bg-white/20 flex items-center gap-2"
           >
             Become a Vendor
             <Store className="w-5 h-5" />

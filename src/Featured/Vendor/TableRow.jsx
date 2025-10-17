@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 import Row from "./Row";
-import { productsData } from "../../Utils/VendorsProductList";
+import { productsData } from "../../utils/VendorsProductList";
 
 function TableRow() {
 

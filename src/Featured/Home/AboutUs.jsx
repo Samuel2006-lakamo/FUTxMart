@@ -1,8 +1,11 @@
 function AboutUs() {
   return (
     <section className="bg-slate-50 py-12 text-center px-4 md:px-16">
-      <h2 className="text-3xl font-bold text-stone-800 font-[montserrat] mb-4 lg:text-5xl">
-        About Us
+      <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6  text-gray-900">
+        About{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-teal-500">
+          FUTMxMart
+        </span>
       </h2>
       <p className="text-gray-500 max-w-4xl lg:text-[18px] indent-8 mx-auto text-[16px]/8 font-[poppins] ">
         FUTMxMart is an online marketplace built exclusively for FUT Minna
