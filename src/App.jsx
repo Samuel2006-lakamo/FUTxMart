@@ -37,11 +37,6 @@ function App() {
             <Route path="vendor/settings" element={<SettingLayout />}>
               <Route index element={<ProfileSettings />} />
               <Route path="profile" element={<ProfileSettings />} />
-              {/* <Route path="store" element={<StoreSettings />} />
-            <Route path="payment" element={<PaymentSettings />} />
-            <Route path="notifications" element={<NotificationSettings />} />
-            <Route path="security" element={<SecuritySettings />} />
-            <Route path="account" element={<AccountSettings />} /> */}
             </Route>
             ;
           </Route>
@@ -53,7 +48,7 @@ function App() {
           {/* Catch-All */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        <ReactQueryDevtools initialsOpen={false}/>
+        <ReactQueryDevtools initialsOpen={false} />
       </QueryClientProvider>
     </BrowserRouter>
   );

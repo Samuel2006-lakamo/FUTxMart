@@ -8,6 +8,7 @@ import AccountDropDown from "./AccountDropDown";
 import Modal from "./Modal";
 import AddProductForm from "../Featured/Vendor/AddProductForm";
 
+
 function HeaderMenus({ setShowSearch, showSearch }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const auth = true;
@@ -43,7 +44,6 @@ function HeaderMenus({ setShowSearch, showSearch }) {
 
       {vendor && (
         <div className="flex items-center gap-2 md:gap-5 relative">
-         
           <Modal>
             <Modal.Open opens="addProduct">
               <button
@@ -71,6 +71,8 @@ function HeaderMenus({ setShowSearch, showSearch }) {
           <div className="relative">
             <img
               onClick={() => setShowDropdown(!showDropdown)}
+              onMouseEnter={() => setShowDropdown(!showDropdown)}
+           
               src="/images/default-user.jpg"
               className="w-8 h-8 rounded-full object-cover bg-purple-700 border border-purple-600 cursor-pointer"
               alt="Vendor profile"

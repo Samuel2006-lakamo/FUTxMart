@@ -1,3 +1,4 @@
+import { BsTelegram } from "react-icons/bs";
 import {
   FaFacebookF,
   FaInstagram,
@@ -161,10 +162,10 @@ function Footer() {
             target="_blank"
             className="hover:text-emerald-400"
           >
-            <FaTelegram />
+            <BsTelegram/>
           </Link>
           <Link
-            to="https://wa.me/"
+            to="https://wa.me/09132709107"
             target="_blank"
             className="hover:text-emerald-400"
           >

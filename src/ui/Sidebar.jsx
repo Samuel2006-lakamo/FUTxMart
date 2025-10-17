@@ -101,7 +101,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
     >
       {/* Sidebar Header */}
       <div className="flex items-center justify-between p-4 border-b">
-        <img src="/logo1.png" className="h-10" />
+        <img src="/logo.png" className="h-10" />
 
         <button
           onClick={() => setSidebarOpen(false)}

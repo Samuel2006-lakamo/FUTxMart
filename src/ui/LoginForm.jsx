@@ -26,16 +26,19 @@ function LoginForm() {
       {/* Logo Section */}
       <div className="flex flex-col items-center mb-8">
         <img
-          src="/logo1.png"
+          src="/logo.png"
           alt="FUTxMart logo"
           className="h-20 w-auto mb-2 transition-transform hover:scale-105"
         />
-        <h1
-          className="text-3xl font-semibold text-purple-900"
+        <span
+          className="md:text-3xl text-2xl font-semibold tracking-tight text-gray-900"
           style={{ fontFamily: "'Outfit', sans-serif" }}
         >
-          FUTM<span className="text-purple-700 font-bold">x</span>Mart
-        </h1>
+          FUTM<span className="text-purple-700 font-light">x</span>
+          <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-teal-600">
+            Mart
+          </span>
+        </span>
       </div>
 
       {/* Form Section */}
