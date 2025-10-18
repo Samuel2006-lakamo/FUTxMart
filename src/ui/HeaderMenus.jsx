@@ -12,9 +12,9 @@ import AddProductForm from "../Featured/Vendor/AddProductForm";
 function HeaderMenus({ setShowSearch, showSearch }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const auth = true;
-  const buyer = false;
+  const buyer = true;
 
-  const vendor = true;
+  const vendor = false;
   const navigate = useNavigate();
   return (
     <div className="flex items-center gap-2 md:gap-5">
