@@ -38,7 +38,7 @@ function Products() {
           className="border border-gray-300 rounded-md px-3 py-2 w-full sm:w-[300px] focus:outline-none focus:ring-2 focus:ring-purple-500"
         />
       </div>
-      <section className="p-6 grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <section className="p-6 grid gap-6 grid-cols-1 sm:grind-col-2 md:grid-cols-3 lg:grid-cols-4">
         {filteredProducts?.length > 0 ? (
           filteredProducts.map((product) => (
             <div
